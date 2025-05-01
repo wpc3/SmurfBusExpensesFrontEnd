@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import api from '../api';
-import ExpenseForm from '../components/ExpenseForm';
+import ExpenseForm from './ExpenseForm';
 
 
 
