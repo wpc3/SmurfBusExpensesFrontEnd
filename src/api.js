@@ -1,7 +1,7 @@
 // src/api.js
 import axios from 'axios';
 
-const API_BASE = 'http://localhost:8080/api/'; // Adjust based on your backend
+const API_BASE = 'http://localhost:8080'; // Adjust based on your backend
 
 export const createExpense = (expense) => axios.post(`${API_BASE}/expense`, expense);
 export const createMultipleExpenses = (expenses) => axios.post(`${API_BASE}/expenses`, expenses);
