@@ -16,6 +16,8 @@ const Layout = () => {
             <li><Link to="/month-year">By Month & Year</Link></li>
             <li><Link to="/year">By Year</Link></li>
             <li><Link to="/category">By Category</Link></li>
+            <li><Link to="/delete">Delete Expenses</Link></li>
+            <li><Link to="/update">Edit Expense</Link></li>
           </ul>
         </nav>
       </header>
