@@ -15,6 +15,8 @@ const Home = () => {
         <li><Link to="/month-year">Expenses by Month & Year</Link></li>
         <li><Link to="/year">Expenses by Year</Link></li>
         <li><Link to="/category">Expenses by Category</Link></li>
+        <li><Link to="/delete">Delete Expenses</Link></li>
+        <li><Link to="/update">Edit expense</Link></li>
       </ul>
     </div>
   );
