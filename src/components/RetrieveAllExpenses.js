@@ -5,7 +5,7 @@ const RetrieveAllExpenses = () => {
   const [expenses, setExpenses] = useState([]);
 
   const fetchAll = async () => {
-    const res = await axios.get('http://localhost:8080/expenses');
+    const res = await axios.get('https://smurfbusexpensessitebackend.onrender.com/expenses');
     setExpenses(res.data);
   };
 

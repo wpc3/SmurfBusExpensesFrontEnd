@@ -31,7 +31,7 @@ const CreateExpense = () => {
         year: parseInt(formData.year)
       };
 
-      await axios.post('http://localhost:8080/expense', expense);
+      await axios.post('https://smurfbusexpensessitebackend.onrender.com/expense', expense);
       setMessage('Expense created successfully!');
       setFormData({ category: '', cost: '', description: '', month: '', year: '' });
     } catch (error) {

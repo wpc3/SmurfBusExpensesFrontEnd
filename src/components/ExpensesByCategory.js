@@ -10,7 +10,7 @@ const ExpenseByCategory = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/expenses/categories');
+        const response = await axios.get('https://smurfbusexpensessitebackend.onrender.com/expenses/categories');
         setCategories(response.data);
       } catch (error) {
         console.error('Error fetching categories:', error);
@@ -24,7 +24,7 @@ const ExpenseByCategory = () => {
     if (selectedCategory) {
       const fetchExpensesByCategory = async () => {
         try {
-          const response = await axios.get(`http://localhost:8080/expenses/category/${selectedCategory}`);
+          const response = await axios.get(`https://smurfbusexpensessitebackend.onrender.com/expenses/category/${selectedCategory}`);
           setExpenses(response.data);
         } catch (error) {
           console.error('Error fetching expenses by category:', error);
