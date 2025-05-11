@@ -39,7 +39,7 @@ const CreateMultipleExpenses = () => {
         year: parseInt(exp.year)
       }));
 
-      await axios.post('http://localhost:8080/expenses', formattedExpenses);
+      await axios.post('https://smurfbusexpensessitebackend.onrender.com/expenses', formattedExpenses);
       setMessage('Expenses created successfully!');
       setExpenses([{ category: '', cost: '', description: '', month: '', year: '' }]);
     } catch (error) {

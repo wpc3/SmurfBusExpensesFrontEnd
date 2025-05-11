@@ -8,7 +8,7 @@ const RetrieveExpenseById = () => {
 
   const handleFetch = async () => {
     try {
-      const res = await axios.get(`http://localhost:8080/expense/${id}`);
+      const res = await axios.get(`https://smurfbusexpensessitebackend.onrender.com/expense/${id}`);
       setExpense(res.data);
       setMessage('');
     } catch (err) {

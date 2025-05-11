@@ -6,7 +6,7 @@ const ExpensesByYear = () => {
   const [results, setResults] = useState([]);
 
   const fetch = async () => {
-    const res = await axios.get(`http://localhost:8080/expenses/${year}`);
+    const res = await axios.get(`https://smurfbusexpensessitebackend.onrender.com/expenses/${year}`);
     setResults(res.data);
   };
 

@@ -26,7 +26,7 @@ const UpdateExpense = () => {
         month: parseInt(formData.month),
         year: parseInt(formData.year)
       };
-      await axios.put(`http://localhost:8080/expense/${id}`, payload);
+      await axios.put(`https://smurfbusexpensessitebackend.onrender.com/expense/${id}`, payload);
       setMessage('Expense updated successfully!');
     } catch (err) {
       setMessage('Error updating expense.');
