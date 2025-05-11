@@ -7,7 +7,7 @@ const DeleteExpense = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`https://smurfbusexpensessitebackend.onrender.com/${id}`);
+      await axios.delete(`https://smurfbusexpensessitebackend.onrender.com/expense/${id}`);
       setMessage(`Expense ${id} deleted.`);
     } catch (err) {
       setMessage('Error deleting expense.');
