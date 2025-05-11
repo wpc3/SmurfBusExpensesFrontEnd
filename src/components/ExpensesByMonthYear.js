@@ -7,7 +7,7 @@ const ExpensesByMonthYear = () => {
   const [results, setResults] = useState([]);
 
   const fetch = async () => {
-    const res = await axios.get(`https://smurfbusexpensessitebackend.onrender.com/${month}/${year}`, {
+    const res = await axios.get(`https://smurfbusexpensessitebackend.onrender.com/expenses/${month}/${year}`, {
       // params: { month, year }
     });
     setResults(res.data);
