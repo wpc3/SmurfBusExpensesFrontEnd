@@ -1,0 +1,21 @@
+.expenses-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    text-align: left;
+  }
+  
+  .expenses-table th,
+  .expenses-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .expense-row:hover {
+    background-color: #f5faff;
+    cursor: pointer;
+  }
+  
+  .expense-row.selected {
+    background-color: #d0ebff;
+  }
