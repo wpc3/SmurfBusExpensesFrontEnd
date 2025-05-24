@@ -20,7 +20,7 @@ const ExpensesByMonthYear = () => {
     <div style={{ marginBottom: '1rem' }}>
       <input
         type="number"
-        placeholder="Month"
+        placeholder="Month (ex: Type 1 for Jan)"
         value={month}
         onChange={(e) => setMonth(e.target.value)}
       />
