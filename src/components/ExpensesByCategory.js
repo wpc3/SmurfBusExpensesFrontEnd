@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './ExpenseByCategory.css'
 
+const monthNames = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+
 const ExpenseByCategory = () => {
   const [categories, setCategories] = useState([]);
   const [expenses, setExpenses] = useState([]);
@@ -81,7 +86,7 @@ const ExpenseByCategory = () => {
               <tr key={expense.expenseId}>
                 <td>{expense.description}</td>
                 <td>${expense.cost.toFixed(2)}</td>
-                <td>{expense.month}</td>
+                <td>{monthNames[expense.month -1]}</td>
                 <td>{expense.year}</td>
               </tr>
             ))}
