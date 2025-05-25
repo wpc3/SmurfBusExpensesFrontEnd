@@ -9,7 +9,7 @@ const Layout = () => {
         <h1>Expense Tracker</h1>
         <nav>
           <ul>
-            <li><Link to="/">Home</Link></li>
+            {/* <li><Link to="/">Home</Link></li> */}
             <li><Link to="/create">Create Expense</Link></li>
             <li><Link to="/create-multiple">Create Multiple</Link></li>
             <li><Link to="/get-all">All Expenses</Link></li>
