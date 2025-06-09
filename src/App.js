@@ -11,13 +11,15 @@ import DeleteExpense from './components/DeleteExpense';
 import ExpensesByMonthYear from './components/ExpensesByMonthYear';
 import ExpensesByYear from './components/ExpensesByYear';
 import ExpensesByCategory from './components/ExpensesByCategory';
+import LoginPage from './components/LoginPage';
 import './style.css';
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<LoginPage />}/>
+        <Route path="/home" element={<Layout />}>
           {/* <Route index element={<Home />} /> */}
           <Route path="create" element={<CreateExpense />} />
           <Route path="create-multiple" element={<CreateMultipleExpenses />} />
@@ -29,6 +31,7 @@ function App() {
           <Route path="year" element={<ExpensesByYear />} />
           <Route path="category" element={<ExpensesByCategory />} />
         </Route>
+        {/* </Route> */}
       </Routes>
     </Router>
   );
