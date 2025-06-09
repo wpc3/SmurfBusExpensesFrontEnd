@@ -10,7 +10,7 @@ export default function LoginForm({ onLoginSuccess }) {
     e.preventDefault();
     try {
       const res = await axios.post("https://smurfbusexpensessitebackend.onrender.com/login", { username, password });
-      onLoginSuccess(res.data); // pass user/token to parent
+      onLoginSuccess(res.data); 
     } catch (err) {
       setError("Invalid credentials");
     }
