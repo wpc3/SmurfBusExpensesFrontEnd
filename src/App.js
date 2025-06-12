@@ -12,13 +12,15 @@ import ExpensesByMonthYear from './components/ExpensesByMonthYear';
 import ExpensesByYear from './components/ExpensesByYear';
 import ExpensesByCategory from './components/ExpensesByCategory';
 import LoginPage from './components/LoginPage';
+import SignupForm from './components/SignUpFrom';
+import AuthPage from './components/AuthPage';
 import './style.css';
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<LoginPage />}/>
+        <Route path="/" element={<AuthPage />}/>
         <Route path="/home" element={<Layout />}>
           {/* <Route index element={<Home />} /> */}
           <Route path="create" element={<CreateExpense />} />
