@@ -10,7 +10,8 @@ export default function AuthPage() {
     const handleAuthSuccess = (userData) => {
       console.log("Logged in user:", userData);
       // Save user info or token here if needed
-      navigate("/home"); // Redirect to Home
+      localStorage.setItem("accountId", userData.id);
+      navigate("/get-all"); // Redirect to Home
     };
   
     return (
