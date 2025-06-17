@@ -19,23 +19,45 @@ import './style.css';
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<AuthPage />}/>
-        <Route path="/home" element={<Layout />}>
-          {/* <Route index element={<Home />} /> */}
-          <Route path="create" element={<CreateExpense />} />
-          <Route path="create-multiple" element={<CreateMultipleExpenses />} />
-          <Route path="get" element={<RetrieveExpenseById />} />
-          <Route path="get-all" element={<RetrieveAllExpenses />} />
-          <Route path="update" element={<UpdateExpense />} />
-          <Route path="delete" element={<DeleteExpense />} />
-          <Route path="month-year" element={<ExpensesByMonthYear />} />
-          <Route path="year" element={<ExpensesByYear />} />
-          <Route path="category" element={<ExpensesByCategory />} />
-        </Route>
-        {/* </Route> */}
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={<AuthPage />} />
+      
+      {/* Wrap all other routes with Layout */}
+      <Route element={<Layout />}>
+      {/* <Route path="home" element={<Layout />} /> */}
+        <Route path="create" element={<CreateExpense />} />
+        <Route path="create-multiple" element={<CreateMultipleExpenses />} />
+        <Route path="get" element={<RetrieveExpenseById />} />
+        <Route path="get-all" element={<RetrieveAllExpenses />} />
+        <Route path="update" element={<UpdateExpense />} />
+        <Route path="delete" element={<DeleteExpense />} />
+        <Route path="month-year" element={<ExpensesByMonthYear />} />
+        <Route path="year" element={<ExpensesByYear />} />
+        <Route path="category" element={<ExpensesByCategory />} />
+      </Route>
+
+      {/* Optional: catch-all 404 route */}
+      <Route path="*" element={<p>404: Page not found</p>} />
+    </Routes>
+  </Router>
+    // <Router>
+    //   <Routes>
+    //     <Route path="/" element={<AuthPage />}/>
+    //     <Route path="/home" element={<Layout />}>
+    //       {/* <Route index element={<Home />} /> */}
+    //       <Route path="create" element={<CreateExpense />} />
+    //       <Route path="create-multiple" element={<CreateMultipleExpenses />} />
+    //       <Route path="get" element={<RetrieveExpenseById />} />
+    //       <Route path="get-all" element={<RetrieveAllExpenses />} />
+    //       <Route path="update" element={<UpdateExpense />} />
+    //       <Route path="delete" element={<DeleteExpense />} />
+    //       <Route path="month-year" element={<ExpensesByMonthYear />} />
+    //       <Route path="year" element={<ExpensesByYear />} />
+    //       <Route path="category" element={<ExpensesByCategory />} />
+    //     </Route>
+    //     {/* </Route> */}
+    //   </Routes>
+    // </Router>
   );
 }
 

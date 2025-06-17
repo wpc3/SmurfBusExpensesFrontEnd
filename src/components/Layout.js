@@ -1,8 +1,14 @@
-// components/Layout.js
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 
 const Layout = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.clear(); 
+    navigate('/'); 
+  };
+
   return (
     <div className="app-container">
       <header>
@@ -18,6 +24,11 @@ const Layout = () => {
             <li><Link to="/category">By Category</Link></li>
             <li><Link to="/delete">Delete Expenses</Link></li>
             <li><Link to="/update">Edit Expense</Link></li>
+            <li>
+              <button onClick={handleLogout} style={{ cursor: 'pointer', background: 'none', border: 'none', color: 'blue', textDecoration: 'underline', padding: 0 }}>
+                Sign Out
+              </button>
+            </li>
           </ul>
         </nav>
       </header>
