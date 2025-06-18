@@ -11,30 +11,47 @@ const ExpenseByCategory = () => {
   const [categories, setCategories] = useState([]);
   const [expenses, setExpenses] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('');
+  const accountId = localStorage.getItem("accountId")
+  // if (!accountId ) {
+  //   setMessage('User not logged in. Please log in first.');
+  //   return;
+  // }
 
   // Fetch categories when the component mounts
   useEffect(() => {
     const fetchCategories = async () => {
+
+      // const accountId = localStorage.setItem("accountId")
+      // if (!accountId ) {
+      //   setMessage('User not logged in. Please log in first.');
+      //   return;
+      // }
       try {
-        const response = await axios.get('https://smurfbusexpensessitebackend.onrender.com/expenses/categories');
+        const response = await axios.get(`https://smurfbusexpensessitebackend.onrender.com/expenses/account/categories/${accountId}`);
         // const response = await axios.get('http://localhost:8080/expenses/categories');
-        setCategories(response.data);
+        const data = Array.isArray(response.data) ? response.data : [];
+        // setCategories(response.data);
+        setCategories(data);
       } catch (error) {
         console.error('Error fetching categories:', error);
+        setCategories([]);
       }
     };
     fetchCategories();
-  }, []);
+  }, [accountId]);
 
   // Fetch expenses based on the selected category
   const fetchExpensesByCategory = async () => {
-    if (!selectedCategory) return;
+    if (!selectedCategory || !accountId) return;
     try {
-      const response = await axios.get(`https://smurfbusexpensessitebackend.onrender.com/expenses/category/${selectedCategory}`);
+      const response = await axios.get(`https://smurfbusexpensessitebackend.onrender.com/expenses/category/account/${selectedCategory}/${accountId}`);
+      const data = Array.isArray(response.data) ? response.data : [];
+      setExpenses(data)
       // const response = await axios.get(`http://localhost:8080/expenses/category/${selectedCategory}`);
       setExpenses(response.data);
     } catch (error) {
       console.error('Error fetching expenses by category:', error);
+      setExpenses([]);
     }
   };
 
