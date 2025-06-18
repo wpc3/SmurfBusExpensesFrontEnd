@@ -23,6 +23,12 @@ const CreateExpense = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      const accountId = localStorage.getItem("accountId")
+      if (!accountId ) {
+        setMessage('User not logged in. Please log in first.');
+        return;
+      }
+    // try {
       const expense = {
         category: formData.category,
         cost: parseFloat(formData.cost),
@@ -31,7 +37,7 @@ const CreateExpense = () => {
         year: parseInt(formData.year)
       };
 
-      await axios.post('https://smurfbusexpensessitebackend.onrender.com/expense', expense);
+      await axios.post(`https://smurfbusexpensessitebackend.onrender.com/${accountId}/expense`, expense);
       setMessage('Expense created successfully!');
       setFormData({ category: '', cost: '', description: '', month: '', year: '' });
     } catch (error) {
