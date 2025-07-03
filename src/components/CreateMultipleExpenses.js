@@ -31,6 +31,13 @@ const CreateMultipleExpenses = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      const accountId = localStorage.getItem("accountId")
+      if (!accountId ) {
+        setMessage('User not logged in. Please log in first.');
+        return;
+      
+      }
+    // try {
       const formattedExpenses = expenses.map(exp => ({
         category: exp.category,
         cost: parseFloat(exp.cost),
@@ -39,7 +46,7 @@ const CreateMultipleExpenses = () => {
         year: parseInt(exp.year)
       }));
 
-      await axios.post('https://smurfbusexpensessitebackend.onrender.com/expenses', formattedExpenses);
+      await axios.post(`https://smurfbusexpensessitebackend.onrender.com/account/${accountId}/expenses`, formattedExpenses);
       setMessage('Expenses created successfully!');
       setExpenses([{ category: '', cost: '', description: '', month: '', year: '' }]);
     } catch (error) {
