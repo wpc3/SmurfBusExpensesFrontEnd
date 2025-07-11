@@ -6,9 +6,10 @@ const ExpensesByMonthYear = () => {
   const [month, setMonth] = useState('');
   const [year, setYear] = useState('');
   const [results, setResults] = useState([]);
+  const accountId = localStorage.getItem("accountId")
 
   const fetch = async () => {
-    const res = await axios.get(`https://smurfbusexpensessitebackend.onrender.com/expenses/${month}/${year}`, {
+    const res = await axios.get(`https://smurfbusexpensessitebackend.onrender.com/expenses/account/${month}/${year}/${accountId}`, {
       // params: { month, year }
     });
     setResults(res.data);
