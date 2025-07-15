@@ -5,9 +5,10 @@ import axios from 'axios';
 const ExpensesByYear = () => {
   const [year, setYear] = useState('');
   const [results, setResults] = useState([]);
+  const accountId = localStorage.getItem("accountId")
 
   const fetch = async () => {
-    const res = await axios.get(`https://smurfbusexpensessitebackend.onrender.com/expenses/${year}`);
+    const res = await axios.get(`https://smurfbusexpensessitebackend.onrender.com/expenses/account/${year}/${accountId}`);
     // const res = await axios.get(`http://localhost:8080/expenses/${year}`);
     setResults(res.data);
   };
