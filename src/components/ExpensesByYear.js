@@ -58,6 +58,5 @@ const ExpensesByYear = () => {
   );
 };
 
-//{r.dateString || `Year ${year}`}:
 
 export default ExpensesByYear;
